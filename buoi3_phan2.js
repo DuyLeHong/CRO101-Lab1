@@ -24,7 +24,7 @@ console.log('---------Test Promise--------')
 let promise = new Promise(
     function (resolve, reject) {
         setTimeout(() => resolve("done!"), 1000);
-        
+
     }
 );
 // resolve sẽ invoke then
@@ -42,14 +42,16 @@ async function doSomething() {
     //console.log(a)
     try {
         console.log(a)
-    } catch(err) {
+    } catch (err) {
         console.log("Loi: " + err)
     }
 
     return await new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve('Hoàn thành. Làm gì đó ở đây');
-            //reject('Loi mang')
+            //resolve('Hoàn thành. Làm gì đó ở đây');
+            reject('Loi mang')
         }, 1000);
+    }).catch(function (err) {
+        console.log(err)
     });
 }
