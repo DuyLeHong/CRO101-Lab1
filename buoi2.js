@@ -27,12 +27,17 @@ let validPlayer = ({name, goals} = {}) => {
 }
 
 function displayPlayers () {
-    for (const player of players) {
+    // for (const player of players) {
         
-        if (validPlayer(player)) {
-            console.log(player.name + " - " + player.goals)
-        }
-    }
+    //     if (validPlayer(player)) {
+    //         console.log(player.name + " - " + player.goals)
+    //     }
+    // }
+
+    let arrPlayersHopLe  = players.filter(validPlayer)
+
+    arrPlayersHopLe.forEach((player) => console.log(player))
+    
 }
 
 displayPlayers()
